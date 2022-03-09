@@ -23,10 +23,11 @@ def test_E2E_login():
         page.fill("input[name=username]", env("LOGIN_USERNAME"))
         page.fill("input[name=password]", env("LOGIN_PASSWORD"))
         page.click("input[value=Login]")
-
-        assert "List Item" in page.inner_text()
+        list_item = page.text_content("text=List Item")
+        assert list_item == "List Item"
+        page.click(".header__nav-item >> text=List Item")
         page.screenshot(path="screenshots/screenshot.png")
-        browser.close("ul")
+        browser.close()
 
 
 @pytest.mark.skip(reason="working on a complete test")
