@@ -8,6 +8,7 @@ click==8.0.4
 coverage==6.3.2
 distlib==0.3.4
 django-environ==0.8.1
+factory-boy==3.2.1
 Faker==13.3.1
 filelock==3.6.0
 flake8==4.0.1
